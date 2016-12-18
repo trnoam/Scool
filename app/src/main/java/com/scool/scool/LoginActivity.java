@@ -123,6 +123,8 @@ public class LoginActivity extends AppCompatActivity {
         text.setText(lesson.class_name + " from: " + lesson.start_time + " to: " + lesson.end_time);
         text.setVisibility(View.VISIBLE);
         text.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+
+
         main_layout.addView(text);
     }
     private void my_toast(String message){
