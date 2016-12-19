@@ -35,7 +35,6 @@ public class LoginActivity extends AppCompatActivity {
     private Toast prev_toast = null;
     DatabaseReference myRef = null;
     LinearLayout main_layout = null;
-    int wowowoowowowowo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
