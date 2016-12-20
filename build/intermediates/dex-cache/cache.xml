@@ -3,138 +3,156 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-10.0.1_e803476976a56d8d23e06f97ab3a8ace41f272b7\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\exploded-aar\com.android.support\design\25.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.0.1_86bd11ee22af86bb118b823a9ae57375b42c1018\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\classes.jar"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.0.1_7f49aba57a362b47386ee58765385f7152e7cd94\classes.dex" />
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.0.1_7f1aeda4a7a179d7e74e0a30a3718de60030a1c0\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.0.1\jars\classes.jar"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\exploded-aar\com.android.support\multidex\1.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-multidex-1.0.1_9139ec17806f3fb309f03c71e1f3af8bcb692619\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.0.1_39fdc406819809eea49c2f755717bbef147a036f\classes.dex" />
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.0.1_edddaa8f26495badab121006942bdbcf1bf0366c\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\classes.jar"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.0.1_ac7b62e8973a7644e95d0964c695be0781c3572b\classes.dex" />
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.0.1_95ec13a36100fdf8e701769ca11b07f95584b0dd\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_fa138cdebdca4e1ce98d6dd364483a5d157f724f\classes.dex" />
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-impl-10.0.1_eea187d1666c5ebff2d8149304353a566eb5ca74\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\exploded-aar\com.android.support\transition\25.0.1\jars\classes.jar"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\libs\internal_impl-25.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.0.1_054e0695c458b4eff92bd3a6ba65dfd250878f64\classes.dex" />
+        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_ec0c8ee33c18f0b29def555a76e8b6a3355e9075\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\classes.jar"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.0.1_35541cd4f4572b91f66c70aaf23a75eb95c1327b\classes.dex" />
+        sha1="ec843ece693a5ad3f498bbcde4a8e99f68ed255d">
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_63a83afd94770768b4ca8981bb639798c8345d7d\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\10.0.1\jars\classes.jar"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-iid-10.0.1_7c5bc88cab1162610054a4b7af3f18cdc72329f2\classes.dex" />
+        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.0.1_71248f26dc377c2ba7a32dd5198e4f80e8be45b5\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database-connection\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="9b0ab8f377dde8c14411ed9b1e15ef0697c5b597">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_a81c03579466ae8f83873fbc192098e9fe1a8bbf\classes.dex" />
+        sha1="8010ae6ed32828a145b25ec97bc07b7a83c6318f">
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-connection-10.0.1_60a3cdda12493089f4a3b5d3789831501fc943cb\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\10.0.1\jars\classes.jar"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\libs\internal_impl-25.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-common-10.0.1_062843479c628b05122f57e77891152db390a06f\classes.dex" />
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_e5bdfe0f449fcc0f152a3f754be1d89d7d23c38f\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.0.1\jars\classes.jar"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.0.1_e4b66e45647c5db160f95093830536e1ab70505d\classes.dex" />
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_822b798d78e31a2b53ad37d065c05176ffdcd5ed\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="f83b00041ecfba705603fec40363416c7de69719">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_4835b9c80b4d38684ce4a5e7eec5c801f6292658\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="145cc7f29f95871e87194ce9a9c582f5c6abe85f">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_4378a847326c65ccec79cd892b952f18ebb3346d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.0.1\jars\classes.jar"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.0.1_b4efd2c79b4bfed7d7d2bac55a6bf66004ba75b4\classes.dex" />
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.0.1_a3d3ee01c3fabad5a2c1f51553df3047579529fe\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="4a76ab8a7733de5ae8801c94041fc166412de380">
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_5766203733419d36175d4d660489bb90ded7eaee\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_2a08ef6f7b7bf709a764a8f90a321bdcd1ee182e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-10.0.1_7d14fcf2ec641defafc6294f5420791eb6f087d8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="8f128aeeb7e31271b28a7adb9dac1f3a6ed9f5e7">
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-10.0.1_03e09909d856495132b34ecb8656d9819079c58b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="f83b00041ecfba705603fec40363416c7de69719">
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_87b324e56288de50c8779f3c852bc68789ddd4ab\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -143,115 +161,106 @@
         optimize="true"
         revision="25.0.1"
         sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.0.1_af9630537ff22bab6205e06ae032d328dae012ff\classes.dex" />
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.0.1_af9630537ff22bab6205e06ae032d328dae012ff\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\10.0.1\jars\classes.jar"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\exploded-aar\com.android.support\transition\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-impl-10.0.1_b926955fc3a07dcc2ef9791966bea893cf4c01d3\classes.dex" />
+        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.0.1_7675aa65ecd4832bb82b5644be39575e292e33c5\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.0.1\jars\classes.jar"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-10.0.1_a649d65f2442620cdb6f38d9827101c5fd6da43c\classes.dex" />
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.0.1_2c48544885ffc8e01a7518abd8bc86d5674a5df8\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_68e248e13ee5c7ab5e267115d4d5f2877b81bbae\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="8f128aeeb7e31271b28a7adb9dac1f3a6ed9f5e7">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-10.0.1_198a8b7044c461af2b8d090e80705adf52a27ebd\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\classes.jar"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.0.1_6c5135540f502665206bd4ffa8dd38f435ce1c92\classes.dex" />
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.0.1_3b295ce2892c24b1899a44084d7a3c253a76c80d\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database-connection\10.0.1\jars\classes.jar"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\exploded-aar\com.android.support\design\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="8010ae6ed32828a145b25ec97bc07b7a83c6318f">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-connection-10.0.1_1b0802b3e906f114e459a9382f400948e031ec14\classes.dex" />
+        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.0.1_6e24a606c20f8047afbd71c45b15f5595f4ee9ec\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_703da12249899e7c50169741c8f9e2d7e5b95dd4\classes.dex" />
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-10.0.1_ea59ce59a4755e14defc8daae26631f9fb88388e\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.0.1_2962532cd352a11c86d30efb041d2ea288bff6ad\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\10.0.1\jars\classes.jar"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-10.0.1_e4f4e6f68f5cdb8b34beeabafc117c59d070c1e1\classes.dex" />
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-10.0.1_3384e809ac6cc5785971e8e24fb76f36dd8059d3\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_f0baa92f94c1c0dd6b72baf62d125948938fe139\classes.dex" />
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-iid-10.0.1_1fbe5aa278ec68247c222b78c59d954b7f31a78a\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.0.1\jars\classes.jar"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.0.1_90e0cbbd322713b0b9f6e52d6ed8561958ed7535\classes.dex" />
+        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.0.1_80f1684e7e579fcaf747bdb4026636eeaa75a971\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\classes.jar"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
-        <dex dex="C:\Users\User\Desktop\AndroidStudioProjects\ScoolProject\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.0.1_81d310d4b981be78dd8c96babe160a8b94912211\classes.dex" />
+        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.0.1_c868daceb7d18caa519edeb3285023ab4473691e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-common-10.0.1_77041c452f897a6df279166642cb90acfaa04953\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\Scool\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.0.1_0038f1fb6264214167a30d77c9d47ec53c02825d\classes.dex" />
     </item>
 
 </items>
