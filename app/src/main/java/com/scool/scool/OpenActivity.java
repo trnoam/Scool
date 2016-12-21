@@ -10,7 +10,21 @@ public class OpenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_open);
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    synchronized (this) {
+                        wait(2500);
+                        Intent intent = new Intent (OpenActivity.this,LoginActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                }
+                catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 }

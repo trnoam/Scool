@@ -1,16 +1,14 @@
 package com.scool.scool;
 
+import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.Toolbar;
-import android.util.TypedValue;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,13 +33,20 @@ public class LoginActivity extends AppCompatActivity {
     private Toast prev_toast = null;
     DatabaseReference myRef = null;
     LinearLayout main_layout = null;
-    int wowowoowowowowo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+
+        DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
+        final String date = df.format(Calendar.getInstance().getTime());
+        TextView date_txt = (TextView)findViewById(R.id.dateText);
+        date_txt.setText(date);
+
+
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         myRef = database.getReference();
-        setContentView(R.layout.activity_login);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         main_layout = (LinearLayout) findViewById(R.id.content_login);
@@ -87,6 +92,7 @@ public class LoginActivity extends AppCompatActivity {
         List<SpecificLesson> ls = new ArrayList<SpecificLesson>();
         DateFormat df = new SimpleDateFormat("yyyy|MM|dd");
         final String date = df.format(Calendar.getInstance().getTime());
+
         for(DataSnapshot course: all_classes_data){
             if(course == null){
                 continue;
@@ -120,11 +126,20 @@ public class LoginActivity extends AppCompatActivity {
 
     }
     private void add_to_design(SpecificLesson lesson){
-        TextView text = new TextView(this);
-        text.setText(lesson.class_name + " from: " + lesson.start_time + " to: " + lesson.end_time);
-        text.setVisibility(View.VISIBLE);
-        text.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
-        main_layout.addView(text);
+
+        LinearLayout classes_layout = (LinearLayout)findViewById(R.id.classesLayout);
+
+        LinearLayout class_new = new LinearLayout(this);
+        class_new.setLayoutParams(new LinearLayoutCompat.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 50));
+        class_new.setBackgroundColor(Color.BLUE);
+
+        TextView txt = new TextView(this);
+        txt.setText(lesson.class_name);
+        txt.setTextColor(Color.WHITE);
+
+        class_new.addView(txt);
+
+        classes_layout.addView(class_new);
     }
     private void my_toast(String message){
         if(prev_toast != null){
