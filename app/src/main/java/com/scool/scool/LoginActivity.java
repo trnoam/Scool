@@ -120,26 +120,27 @@ public class LoginActivity extends AppCompatActivity {
                 return l1.start_time.compareTo(l2.start_time);
             }
         });
-        for(SpecificLesson lesson: ls){
-            add_to_design(lesson);
-        }
+        add_to_design(ls);
 
     }
-    private void add_to_design(SpecificLesson lesson){
+    private void add_to_design(List<SpecificLesson> ls){
 
-        LinearLayout classes_layout = (LinearLayout)findViewById(R.id.classesLayout);
+        for(SpecificLesson lesson: ls){
+            LinearLayout classes_layout = (LinearLayout)findViewById(R.id.classesLayout);
 
-        LinearLayout class_new = new LinearLayout(this);
-        class_new.setLayoutParams(new LinearLayoutCompat.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 50));
-        class_new.setBackgroundColor(Color.BLUE);
+            LinearLayout class_new = new LinearLayout(this);
+            class_new.setLayoutParams(new LinearLayoutCompat.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, lesson.lesson_diff() * 3));
+            class_new.setBackgroundColor(Color.BLUE);
 
-        TextView txt = new TextView(this);
-        txt.setText(lesson.class_name);
-        txt.setTextColor(Color.WHITE);
+            TextView txt = new TextView(this);
+            txt.setText(lesson.class_name);
+            txt.setTextColor(Color.WHITE);
 
-        class_new.addView(txt);
+            class_new.addView(txt);
 
-        classes_layout.addView(class_new);
+            classes_layout.addView(class_new);
+        }
+
     }
     private void my_toast(String message){
         if(prev_toast != null){
