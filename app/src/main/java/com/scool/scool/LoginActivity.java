@@ -1,5 +1,6 @@
 package com.scool.scool;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -101,15 +102,7 @@ public class LoginActivity extends AppCompatActivity {
                 continue;
             }
             for(DataSnapshot specific_lesson: course.child("times").child(date).getChildren()){
-                SpecificLesson curr = new SpecificLesson();
-                curr.class_name = course.child("name").getValue(String.class);
-                curr.date = date;
-                curr.admin = course.child("admin").getValue(String.class);
-                curr.teacher = course.child("teacher").getValue(String.class);
-                curr.start_time = specific_lesson.getKey();
-                curr.end_time = specific_lesson.child("finish time").getValue(String.class);
-                curr.class_id = course.getKey();
-                curr.posts = specific_lesson.child("posts");
+                SpecificLesson curr = new SpecificLesson(course, specific_lesson, date);
                 ls.add(curr);
             }
         }
@@ -142,7 +135,13 @@ public class LoginActivity extends AppCompatActivity {
 
             classes_layout.addView(class_new);
         }
+        /*TODO: When you Start the SpecificLessonActivity (when the user clicks the LinearLayout) you need to use the following code:
+        Intent intent = new Intent(this, SpecificLessonActivity.class);
+        intent.putExtra("lesson object", lesson);
+        startActivity(intent);
 
+        and the SpecificLesson object will be waiting for you in the SpecificLessonActivity activity as the variable lesson
+        after line number 20*/
     }
     private void my_toast(String message){
         if(prev_toast != null){
