@@ -136,6 +136,8 @@ public class LoginActivity extends AppCompatActivity {
             txt.setText(lesson.class_name);
             txt.setTextColor(Color.WHITE);
 
+            TextView txt_hours = new TextView(this);
+
             class_new.addView(txt);
 
             classes_layout.addView(class_new);
