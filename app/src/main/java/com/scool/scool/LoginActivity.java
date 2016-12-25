@@ -2,6 +2,7 @@ package com.scool.scool;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -53,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         main_layout = (LinearLayout) findViewById(R.id.content_login);
-        main_layout.setBackgroundColor(Color.GRAY);
+        main_layout.setBackgroundColor(Color.WHITE);
         set_ui_components("trnoam");
     }
 
@@ -122,12 +124,23 @@ public class LoginActivity extends AppCompatActivity {
     private void add_to_design(List<SpecificLesson> ls){
         SpecificLesson prev = null;
         LinearLayout classes_layout = (LinearLayout)findViewById(R.id.classesLayout);
-        for(SpecificLesson lesson: ls){
-
+        int[] attrs = new int[]{R.attr.selectableItemBackground};
+        TypedArray typedArray = this.obtainStyledAttributes(attrs);
+        int backgroundResource = typedArray.getResourceId(0, 0);
+        for(final SpecificLesson lesson: ls){
             LinearLayout class_new = new LinearLayout(this);
+            class_new.setBackgroundResource(backgroundResource);
             class_new.setLayoutParams(new LinearLayoutCompat.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                     lesson.lesson_diff() * PIXEL_PER_MINUTE));
-            class_new.setBackgroundColor(Color.WHITE);
+            final LoginActivity this_login_activity = this;
+            class_new.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(this_login_activity, SpecificLessonActivity.class);
+                    intent.putExtra("lesson object", lesson);
+                    startActivity(intent);
+                }
+            });
 
             if(prev != null){
                 LinearLayout space_between_classes = new LinearLayout(this);
@@ -146,13 +159,10 @@ public class LoginActivity extends AppCompatActivity {
             class_new.addView(txt);
 
             classes_layout.addView(class_new);
-
             prev = lesson;
         }
+        typedArray.recycle();
         /*TODO: When you Start the SpecificLessonActivity (when the user clicks the LinearLayout) you need to use the following code:
-        Intent intent = new Intent(this, SpecificLessonActivity.class);
-        intent.putExtra("lesson object", lesson);
-        startActivity(intent);
 
         and the SpecificLesson object will be waiting for you in the SpecificLessonActivity activity as the variable lesson
         after line number 20*/
