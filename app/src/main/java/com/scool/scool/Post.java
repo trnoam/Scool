@@ -43,6 +43,7 @@ public class Post implements Parcelable {
             _files = null;
         }
     }
+
     public Post(Parcel in){
         serial_number = in.readInt();
         _text = in.readString();
