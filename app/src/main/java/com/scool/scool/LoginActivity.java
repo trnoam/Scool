@@ -162,10 +162,6 @@ public class LoginActivity extends AppCompatActivity {
             prev = lesson;
         }
         typedArray.recycle();
-        /*TODO: When you Start the SpecificLessonActivity (when the user clicks the LinearLayout) you need to use the following code:
-
-        and the SpecificLesson object will be waiting for you in the SpecificLessonActivity activity as the variable lesson
-        after line number 20*/
     }
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);

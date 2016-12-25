@@ -14,6 +14,7 @@ import java.util.List;
  */
 
 public class Post implements Parcelable {
+    public int serial_number;
     public String _text;
     public String _type;
     public List<ClassFile> _files;
@@ -22,6 +23,7 @@ public class Post implements Parcelable {
     public Post(){
     }
     public Post(DataSnapshot post_data){
+        serial_number = Integer.parseInt(post_data.getKey());
         if(post_data.hasChild("text")){
             _text = post_data.child("text").getValue(String.class);
         }else{
@@ -37,9 +39,12 @@ public class Post implements Parcelable {
             for(DataSnapshot file_data: post_data.child("files").getChildren()){
                 _files.add(new ClassFile(file_data));
             }
+        }else{
+            _files = null;
         }
     }
     public Post(Parcel in){
+        serial_number = in.readInt();
         _text = in.readString();
         _type = in.readString();
         int amount_files = in.readInt();
@@ -56,11 +61,16 @@ public class Post implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(serial_number);
         dest.writeString(_text);
         dest.writeString(_type);
-        dest.writeInt(_files.size());
-        for(ClassFile file : _files){
-            dest.writeParcelable(file, flags);
+        if(_files != null){
+            dest.writeInt(_files.size());
+            for (ClassFile file : _files) {
+                dest.writeParcelable(file, flags);
+            }
+        }else{
+            writeToParcel(dest, -1);
         }
     }
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {

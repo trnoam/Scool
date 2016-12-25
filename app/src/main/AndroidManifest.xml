@@ -21,7 +21,8 @@
             android:name=".SpecificLessonActivity"
             android:label="@string/title_activity_specific_lesson"
             android:parentActivityName=".LoginActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:configChanges="orientation|keyboardHidden|screenLayout|screenSize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.scool.scool.LoginActivity" />
