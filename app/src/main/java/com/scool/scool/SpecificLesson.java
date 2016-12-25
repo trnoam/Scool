@@ -30,6 +30,11 @@ public class SpecificLesson implements Parcelable{
         int minutes = Integer.parseInt(end_time.substring(3,5)) - Integer.parseInt(start_time.substring(3,5));
         return hours * 60 + minutes;
     }
+    public int lesson_diff(SpecificLesson after){
+        int hours = Integer.parseInt(after.start_time.substring(0,2)) - Integer.parseInt(end_time.substring(0,2));
+        int minutes = Integer.parseInt(after.start_time.substring(3,5)) - Integer.parseInt(end_time.substring(3,5));
+        return hours * 60 + minutes;
+    }
     // Constructor
     public SpecificLesson(DataSnapshot course, DataSnapshot specific_lesson, String date){
         class_name = course.child("name").getValue(String.class);

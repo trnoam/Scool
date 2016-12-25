@@ -34,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     private Toast prev_toast = null;
     DatabaseReference myRef = null;
     LinearLayout main_layout = null;
+    public static int PIXEL_PER_MINUTE = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         main_layout = (LinearLayout) findViewById(R.id.content_login);
+        main_layout.setBackgroundColor(Color.GRAY);
         set_ui_components("trnoam");
     }
 
@@ -117,23 +119,34 @@ public class LoginActivity extends AppCompatActivity {
 
     }
     private void add_to_design(List<SpecificLesson> ls){
-
+        SpecificLesson prev = null;
+        LinearLayout classes_layout = (LinearLayout)findViewById(R.id.classesLayout);
         for(SpecificLesson lesson: ls){
-            LinearLayout classes_layout = (LinearLayout)findViewById(R.id.classesLayout);
 
             LinearLayout class_new = new LinearLayout(this);
-            class_new.setLayoutParams(new LinearLayoutCompat.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, lesson.lesson_diff() * 3));
-            class_new.setBackgroundColor(Color.BLUE);
+            class_new.setLayoutParams(new LinearLayoutCompat.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                    lesson.lesson_diff() * PIXEL_PER_MINUTE));
+            class_new.setBackgroundColor(Color.WHITE);
+
+            if(prev != null){
+                LinearLayout space_between_classes = new LinearLayout(this);
+                space_between_classes.setLayoutParams(new LinearLayoutCompat.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                        prev.lesson_diff(lesson) * PIXEL_PER_MINUTE));
+                space_between_classes.setBackgroundColor(Color.GRAY);
+                classes_layout.addView(space_between_classes);
+            }
 
             TextView txt = new TextView(this);
             txt.setText(lesson.class_name);
-            txt.setTextColor(Color.WHITE);
+            txt.setTextColor(Color.BLUE);
 
             TextView txt_hours = new TextView(this);
 
             class_new.addView(txt);
 
             classes_layout.addView(class_new);
+
+            prev = lesson;
         }
         /*TODO: When you Start the SpecificLessonActivity (when the user clicks the LinearLayout) you need to use the following code:
         Intent intent = new Intent(this, SpecificLessonActivity.class);
