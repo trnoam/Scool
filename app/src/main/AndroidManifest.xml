@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".LoginActivity"
+            android:configChanges="orientation|keyboardHidden|screenLayout|screenSize"/>
         <activity
             android:name=".SpecificLessonActivity"
             android:label="@string/title_activity_specific_lesson"

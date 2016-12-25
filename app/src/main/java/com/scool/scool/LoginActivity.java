@@ -1,6 +1,7 @@
 package com.scool.scool;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -155,6 +156,9 @@ public class LoginActivity extends AppCompatActivity {
 
         and the SpecificLesson object will be waiting for you in the SpecificLessonActivity activity as the variable lesson
         after line number 20*/
+    }
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
     }
     private void my_toast(String message){
         if(prev_toast != null){
