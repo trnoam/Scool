@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -124,15 +125,21 @@ public class LoginActivity extends AppCompatActivity {
     private void add_to_design(List<SpecificLesson> ls){
         SpecificLesson prev = null;
         LinearLayout classes_layout = (LinearLayout)findViewById(R.id.classesLayout);
+
         int[] attrs = new int[]{R.attr.selectableItemBackground};
         TypedArray typedArray = this.obtainStyledAttributes(attrs);
         int backgroundResource = typedArray.getResourceId(0, 0);
+
+
+
         for(final SpecificLesson lesson: ls){
             LinearLayout class_new = new LinearLayout(this);
             class_new.setBackgroundResource(backgroundResource);
             class_new.setLayoutParams(new LinearLayoutCompat.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                     lesson.lesson_diff() * PIXEL_PER_MINUTE));
-            final LoginActivity this_login_activity = this;
+
+            final LoginActivity this_login_activity = this; //save this activity
+
             class_new.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -152,13 +159,27 @@ public class LoginActivity extends AppCompatActivity {
 
             TextView txt = new TextView(this);
             txt.setText(lesson.class_name);
-            txt.setTextColor(Color.BLUE);
+            txt.setTextSize(20);
+            txt.setTextColor(Color.WHITE);
+
+            String start = lesson.start_time + lesson.end_time;
+            start = start.substring(0,2) + ":" + start.substring(3, 5) + " - " + start.substring(5, 7) + ":" + start.substring(8, 10) + "     ";
+
 
             TextView txt_hours = new TextView(this);
+            txt_hours.setText(start);
+            txt_hours.setTextSize(20);
+            txt_hours.setTextColor(Color.WHITE);
 
+            class_new.setBackgroundColor(Color.parseColor("#9FA8DA"));
+            class_new.setPadding(20, 15, 0, 0);
+            class_new.addView(txt_hours);
             class_new.addView(txt);
 
+            classes_layout.setBackgroundColor(Color.GRAY);
+            classes_layout.setPadding(0, 0, 0, 0);
             classes_layout.addView(class_new);
+
             prev = lesson;
         }
         typedArray.recycle();
