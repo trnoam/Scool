@@ -30,16 +30,17 @@ public class SpecificLessonActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Bundle extras = getIntent().getExtras();
-        SpecificLesson lesson = extras.getParcelable("lesson object"); //The SpecificLessonObject to display to the screen
-        setTitle(lesson.class_name + " with " + lesson.teacher + " at " + lesson.date);
-        Collections.sort(lesson.posts, new Comparator<Post>()
+        //SpecificLesson lesson = extras.getParcelable("lesson object"); //The SpecificLessonObject to display to the screen
+        //setTitle(lesson.class_name + " with " + lesson.teacher + " at " + lesson.date);
+        /*Collections.sort(lesson.posts, new Comparator<Post>()
         {
             public int compare(Post p1, Post p2)
             {
                 return p1.serial_number - p2.serial_number;
             }
         });
-        add_to_design(lesson);
+        add_to_design(lesson);*/
+        setTitle("Post activity");
 
 
     }
