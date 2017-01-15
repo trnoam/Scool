@@ -31,15 +31,15 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="fill_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:id="@+id/classesLayout"
             android:divider="?android:dividerHorizontal"
-            android:showDividers="middle" />
+            android:showDividers="middle"
+            android:layout_height="fill_parent" />
     </ScrollView>
 
 </LinearLayout>

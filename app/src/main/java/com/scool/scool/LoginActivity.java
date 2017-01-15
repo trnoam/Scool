@@ -39,6 +39,7 @@ public class LoginActivity extends AppCompatActivity {
     DatabaseReference myRef = null;
     LinearLayout main_layout = null;
     public static int PIXEL_PER_MINUTE = 3;
+    Vector<DataSnapshot> all_classes_today = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void set_ui_components(String username){
-        final Vector<DataSnapshot> all_classes_today = new Vector<>();
+        all_classes_today = new Vector<>();
         myRef.child("users").child(username).child("classes").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(final DataSnapshot user_classes) {
@@ -76,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                                         all_classes_today.add(null);
                                     }
                                     if (all_classes_today.size() == user_classes.getChildrenCount()) {
-                                        start_ui_components(all_classes_today);
+                                        start_ui_components(all_classes_today, 0);
                                     }
                                 }
 
@@ -95,19 +96,36 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    void start_ui_components(Vector<DataSnapshot> all_classes_data){
+    void start_ui_components(Vector<DataSnapshot> all_classes_data, int factor){
         List<SpecificLesson> ls = new ArrayList<SpecificLesson>();
         DateFormat df = new SimpleDateFormat("yyyy|MM|dd");
-        final String date = df.format(Calendar.getInstance().getTime());
+        DateFormat print_date = new SimpleDateFormat("dd.MM.yyyy");
+
+
+        String date = "";
+        String curr_txt = "";
+
+        if (factor == 0)
+             date = print_date.format(Calendar.getInstance().getTime());
+        if (factor != 0){
+            curr_txt = ((TextView) findViewById(R.id.dateText)).getText().toString();
+            int day = Integer.parseInt(curr_txt.substring(0, 2)) + factor;
+            curr_txt = Integer.toString(day) + curr_txt.substring(2);
+            date = curr_txt;
+        }
+
+        ((TextView)findViewById(R.id.dateText)).setText(date);
+
+        final String date_fnl = date.substring(6) + "|" + date.substring(3,5) + "|" + date.substring(0,2);
 
         for(DataSnapshot course: all_classes_data){
             if(course == null){
                 continue;
             }
-            if(!course.child("times").child(date).exists()){
+            if(!course.child("times").child(date_fnl).exists()){
                 continue;
             }
-            for(DataSnapshot specific_lesson: course.child("times").child(date).getChildren()){
+            for(DataSnapshot specific_lesson: course.child("times").child(date_fnl).getChildren()){
                 SpecificLesson curr = new SpecificLesson(course, specific_lesson, date);
                 ls.add(curr);
             }
@@ -124,7 +142,7 @@ public class LoginActivity extends AppCompatActivity {
     }
     private void add_to_design(List<SpecificLesson> ls){
         SpecificLesson prev = null;
-        LinearLayout classes_layout = (LinearLayout)findViewById(R.id.classesLayout);
+        final LinearLayout classes_layout = (LinearLayout)findViewById(R.id.classesLayout);
 
         int[] attrs = new int[]{R.attr.selectableItemBackground};
         TypedArray typedArray = this.obtainStyledAttributes(attrs);
@@ -133,7 +151,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         for(final SpecificLesson lesson: ls){
-            LinearLayout class_new = new LinearLayout(this);
+            final LinearLayout class_new = new LinearLayout(this);
             class_new.setBackgroundResource(backgroundResource);
             class_new.setLayoutParams(new LinearLayoutCompat.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                     lesson.lesson_diff() * PIXEL_PER_MINUTE));
@@ -144,7 +162,7 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(this_login_activity, SpecificLessonActivity.class);
-                    intent.putExtra("lesson object", lesson);
+                    //intent.putExtra("lesson object", lesson);
                     startActivity(intent);
                 }
             });
@@ -175,6 +193,28 @@ public class LoginActivity extends AppCompatActivity {
             class_new.setPadding(20, 15, 0, 0);
             class_new.addView(txt_hours);
             class_new.addView(txt);
+
+            findViewById(R.id.screenId).setOnTouchListener(new OnSwipeTouchListener(LoginActivity.this){
+                public void onSwipeRight() {
+                    classes_layout.removeAllViews();
+                    start_ui_components(all_classes_today, -1);
+                }
+                public void onSwipeLeft() {
+                    classes_layout.removeAllViews();
+                    start_ui_components(all_classes_today, 1);
+                }
+            });
+
+            classes_layout.setOnTouchListener(new OnSwipeTouchListener(LoginActivity.this){
+                public void onSwipeRight() {
+                    classes_layout.removeAllViews();
+                    start_ui_components(all_classes_today, -1);
+                }
+                public void onSwipeLeft() {
+                    classes_layout.removeAllViews();
+                    start_ui_components(all_classes_today, 1);
+                }
+            });
 
             classes_layout.setBackgroundColor(Color.GRAY);
             classes_layout.setPadding(0, 0, 0, 0);

@@ -6,7 +6,8 @@
     android:layout_height="fill_parent"
     android:background="@android:color/darker_gray"
     android:fitsSystemWindows="true"
-    tools:context="com.scool.scool.LoginActivity" >
+    tools:context="com.scool.scool.LoginActivity"
+    android:id="@+id/screenId">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -25,6 +26,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_login" />
+    <include layout="@layout/content_login"
+        android:layout_width="match_parent" />
 
 </android.support.design.widget.CoordinatorLayout>
