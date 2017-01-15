@@ -58,11 +58,7 @@ public class SpecificLesson implements Parcelable{
         start_time = in.readString();
         end_time = in.readString();
         class_id = in.readString();
-        int amount_posts = in.readInt();
-        posts = new ArrayList<>();
-        for(int i = 0; i < amount_posts; i++){
-            posts.add(new Post(in));
-        }
+        in.readTypedList(posts, Post.CREATOR);
     }
 
     @Override
@@ -79,12 +75,9 @@ public class SpecificLesson implements Parcelable{
         dest.writeString(start_time);
         dest.writeString(end_time);
         dest.writeString(class_id);
-        dest.writeInt(posts.size());
-        for(Post post : posts){
-            dest.writeParcelable(post, flags);
-        }
+        dest.writeTypedList(posts);
     }
-    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+    public static final Parcelable.Creator<SpecificLesson> CREATOR = new Parcelable.Creator<SpecificLesson>() {
         public SpecificLesson createFromParcel(Parcel in) {
             return new SpecificLesson(in);
         }
