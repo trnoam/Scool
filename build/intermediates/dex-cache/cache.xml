@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="1c1884c2240284a3a3b5d3a475be7a37da79f5bf">
+        sha1="43942e07362441134117d85d174ac017fd16baa9">
         <dex dex="C:\matan\Scool2\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_9e8098336c8b6e5225add0a8505d157e75f7139e\classes.dex" />
     </item>
     <item
@@ -187,7 +187,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="250528bf1b6167e6f6fd565d28b6b062d0001ccc">
+        sha1="4476c7265ecbb5201e1254bd23bb1a65b9f172ee">
         <dex dex="C:\matan\Scool2\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_ecc5e385fa292dd757cc96308070d61ee41353fb\classes.dex" />
     </item>
     <item

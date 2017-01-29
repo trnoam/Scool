@@ -194,7 +194,7 @@ public class LoginActivity extends AppCompatActivity {
             class_new.addView(txt_hours);
             class_new.addView(txt);
 
-            findViewById(R.id.screenId).setOnTouchListener(new OnSwipeTouchListener(LoginActivity.this){
+            findViewById(R.id.scrollView).setOnTouchListener(new OnSwipeTouchListener(LoginActivity.this){
                 public void onSwipeRight() {
                     classes_layout.removeAllViews();
                     start_ui_components(all_classes_today, -1);
@@ -205,18 +205,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
             });
 
-            classes_layout.setOnTouchListener(new OnSwipeTouchListener(LoginActivity.this){
-                public void onSwipeRight() {
-                    classes_layout.removeAllViews();
-                    start_ui_components(all_classes_today, -1);
-                }
-                public void onSwipeLeft() {
-                    classes_layout.removeAllViews();
-                    start_ui_components(all_classes_today, 1);
-                }
-            });
-
-            classes_layout.setBackgroundColor(Color.GRAY);
             classes_layout.setPadding(0, 0, 0, 0);
             classes_layout.addView(class_new);
 

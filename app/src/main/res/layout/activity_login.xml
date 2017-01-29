@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="fill_parent"
-    android:background="@android:color/darker_gray"
-    android:fitsSystemWindows="true"
-    tools:context="com.scool.scool.LoginActivity"
-    android:id="@+id/screenId">
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:id="@+id/Background">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -26,7 +26,51 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_login"
-        android:layout_width="match_parent" />
+    <LinearLayout
+        android:id="@+id/content_login"
+        android:layout_height="fill_parent"
+        tools:showIn="@layout/activity_login"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:elevation="3dp">
 
-</android.support.design.widget.CoordinatorLayout>
+        <LinearLayout
+    android:layout_height="50dp"
+    android:paddingTop = "10dp"
+    android:background="@android:color/holo_blue_light"
+    android:id="@+id/LinearText"
+    android:layout_width="match_parent">
+
+            <TextView
+        android:text="DATE"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dateText"
+        android:gravity="center_horizontal"
+        android:textSize="24sp"
+        android:textColor="@android:color/background_light" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/darker_gray"
+            android:id="@+id/scrollView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/classesLayout"
+                android:divider="?android:dividerHorizontal"
+                android:showDividers="middle"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray">
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+
+</LinearLayout>
