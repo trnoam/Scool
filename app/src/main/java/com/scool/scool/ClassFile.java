@@ -28,7 +28,7 @@ public class ClassFile implements Parcelable{
         if(class_file_data.hasChild("id")){
             _id = class_file_data.child("id").getValue(String.class);
         }else{
-            _id = "";
+            _id = "None";
         }
         if(class_file_data.hasChild("size")){
             _size = class_file_data.child("size").getValue(Integer.class);
@@ -38,7 +38,7 @@ public class ClassFile implements Parcelable{
         if(class_file_data.hasChild("type")){
             _type = class_file_data.child("type").getValue(String.class);
         }else{
-            _type = "";
+            _type = "None";
         }
     }
 
@@ -53,7 +53,7 @@ public class ClassFile implements Parcelable{
         dest.writeInt(_size);
         dest.writeString(_type);
     }
-    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+    public static final Parcelable.Creator<ClassFile> CREATOR = new Parcelable.Creator<ClassFile>() {
         public ClassFile createFromParcel(Parcel in) {
             return new ClassFile(in);
         }

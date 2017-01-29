@@ -34,13 +34,11 @@ public class Post implements Parcelable {
         }else{
             _type = "";
         }
+        _files = new ArrayList<>();
         if(post_data.hasChild("files")){
-            _files = new ArrayList<>();
             for(DataSnapshot file_data: post_data.child("files").getChildren()){
                 _files.add(new ClassFile(file_data));
             }
-        }else{
-            _files = null;
         }
     }
 
@@ -48,11 +46,7 @@ public class Post implements Parcelable {
         serial_number = in.readInt();
         _text = in.readString();
         _type = in.readString();
-        int amount_files = in.readInt();
-        _files = new ArrayList<>();
-        for(int i = 0; i < amount_files; i++){
-            _files.add(new ClassFile(in));
-        }
+        in.readTypedList(_files, ClassFile.CREATOR);
     }
 
     @Override
@@ -65,16 +59,9 @@ public class Post implements Parcelable {
         dest.writeInt(serial_number);
         dest.writeString(_text);
         dest.writeString(_type);
-        if(_files != null){
-            dest.writeInt(_files.size());
-            for (ClassFile file : _files) {
-                dest.writeParcelable(file, flags);
-            }
-        }else{
-            writeToParcel(dest, -1);
-        }
+        dest.writeTypedList(_files);
     }
-    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+    public static final Parcelable.Creator<Post> CREATOR = new Parcelable.Creator<Post>() {
         public Post createFromParcel(Parcel in) {
             return new Post(in);
         }
