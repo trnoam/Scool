@@ -21,6 +21,8 @@ public class SpecificLesson implements Parcelable{
     public String end_time;
     public String class_id;
     public List<Post> posts;
+
+    //make your fuking fields private. kotick is gay
     SpecificLesson(){
 
     }

@@ -161,8 +161,8 @@ public class LoginActivity extends AppCompatActivity {
             class_new.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(this_login_activity, SpecificLessonActivity.class);
-                    //intent.putExtra("lesson object", lesson);
+                    Intent intent = new Intent(this_login_activity, LessonActivity.class);
+                    intent.putExtra("lesson object", lesson);
                     startActivity(intent);
                 }
             });

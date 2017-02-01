@@ -15,18 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"
-            android:configChanges="orientation|keyboardHidden|screenLayout|screenSize"/>
         <activity
-            android:name=".SpecificLessonActivity"
-            android:label="@string/title_activity_specific_lesson"
-            android:parentActivityName=".LoginActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:configChanges="orientation|keyboardHidden|screenLayout|screenSize">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.scool.scool.LoginActivity" />
-        </activity>
+            android:name=".LoginActivity"
+            android:configChanges="orientation|keyboardHidden|screenLayout|screenSize" />
+        <activity android:name=".LessonActivity"></activity>
     </application>
 
 </manifest>
