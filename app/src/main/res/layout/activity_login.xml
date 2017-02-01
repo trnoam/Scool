@@ -22,7 +22,9 @@
             app:popupTheme="@style/AppTheme.PopupOverlay"
             app:subtitleTextColor="@android:color/background_dark"
             app:title="Scool"
-            app:titleTextColor="@android:color/black" />
+            app:titleTextColor="@android:color/black">
+
+        </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
 

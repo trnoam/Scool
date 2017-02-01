@@ -4,8 +4,10 @@ import android.graphics.Color;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -39,9 +41,11 @@ public class LessonActivity extends AppCompatActivity {
 
         posts_ref =  myRef.child("classes").child(lesson.class_id).child("times").
                 child(lesson.date).child(lesson.start_time).child("posts");
-        posts_ref.addListenerForSingleValueEvent(new ValueEventListener() {
+        posts_ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot posts) {
+                LinearLayout del = (LinearLayout)findViewById(R.id.SumTxt);
+                del.removeAllViews();
                 for (DataSnapshot post : posts.getChildren()){
                     add_post_by_text(post.child("text").getValue(String.class));
                 }
@@ -82,7 +86,11 @@ public class LessonActivity extends AppCompatActivity {
 
         LinearLayout ly = (LinearLayout)findViewById(R.id.SumTxt);
         LinearLayout empty = new LinearLayout(this);
+
+        empty.setLayoutParams(new LinearLayoutCompat.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 10));
+
         ly.addView(new_txt);
+        ly.addView(empty);
 
         final ScrollView scroll = (ScrollView)findViewById(R.id.scrollView);
         scroll.post(new Runnable() {
