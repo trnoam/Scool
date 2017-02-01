@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 public class LessonActivity extends AppCompatActivity {
@@ -28,5 +29,13 @@ public class LessonActivity extends AppCompatActivity {
         LinearLayout ly = (LinearLayout)findViewById(R.id.SumTxt);
         LinearLayout empty = new LinearLayout(this);
         ly.addView(new_txt);
+
+        final ScrollView scroll = (ScrollView)findViewById(R.id.scrollView);
+        scroll.post(new Runnable() {
+            @Override
+            public void run() {
+                scroll.fullScroll(View.FOCUS_DOWN);
+            }
+        });
     }
 }
