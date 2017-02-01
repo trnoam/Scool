@@ -60,6 +60,7 @@ public class SpecificLesson implements Parcelable{
         start_time = in.readString();
         end_time = in.readString();
         class_id = in.readString();
+        posts = new ArrayList<Post>();
         in.readTypedList(posts, Post.CREATOR);
     }
 

@@ -46,6 +46,7 @@ public class Post implements Parcelable {
         serial_number = in.readInt();
         _text = in.readString();
         _type = in.readString();
+        _files = new ArrayList<ClassFile>();
         in.readTypedList(_files, ClassFile.CREATOR);
     }
 
