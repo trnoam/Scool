@@ -61,15 +61,15 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/Content"
-            android:layout_weight="1" />
+            android:layout_weight="12.53" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="43dp"
             android:layout_height="wrap_content"
             android:id="@+id/Send"
-            android:layout_weight="1"
             android:background="@android:drawable/ic_input_add"
-            android:onClick="SendSum" />
+            android:onClick="SendSum"
+            android:layout_weight="0.92" />
     </LinearLayout>
 
 </RelativeLayout>
