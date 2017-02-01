@@ -30,6 +30,10 @@ public class LessonActivity extends AppCompatActivity {
 
         lesson = getIntent().getExtras().getParcelable("lesson object");
 
+        lesson.date = lesson.date.replace('.', '|');
+        String[] times = (lesson.date).split("|");
+        lesson.date = times[2] + "|" + times[1] + "|" + times[0];
+
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         myRef = database.getReference();
 
