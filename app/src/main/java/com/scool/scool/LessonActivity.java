@@ -1,6 +1,7 @@
 package com.scool.scool;
 
 import android.graphics.Color;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -9,20 +10,67 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LessonActivity extends AppCompatActivity {
 
+    DatabaseReference myRef = null;
+    DatabaseReference posts_ref = null;
+    SpecificLesson lesson = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson);
+
+        lesson = getIntent().getExtras().getParcelable("lesson object");
+
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        myRef = database.getReference();
+
+        posts_ref =  myRef.child("classes").child(lesson.class_id).child("times").
+                child(lesson.date).child(lesson.start_time).child("posts");
+        posts_ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot posts) {
+                for (DataSnapshot post : posts.getChildren()){
+                    add_post_by_text(post.child("text").getValue(String.class));
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
     }
 
     public void SendSum(View v){
-        EditText txt = (EditText)findViewById(R.id.Content);
+        final EditText txt = (EditText)findViewById(R.id.Content);
+        add_post_by_text(txt.getText().toString());
+        posts_ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot posts) {
+                posts_ref.child(Integer.toString((int)posts.getChildrenCount() + 1)).child("text").setValue(txt.getText());
+            }
 
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast toast = Toast.makeText(LessonActivity.this, "Internet error!!!", Toast.LENGTH_LONG);
+                toast.show();
+            }
+        });
+    }
+
+    public void add_post_by_text(String txt){
         TextView new_txt = new TextView(this);
-        new_txt.setText(txt.getText());
+        new_txt.setText(txt);
         new_txt.setTextSize(30);
         new_txt.setBackgroundColor(Color.GREEN);
 
