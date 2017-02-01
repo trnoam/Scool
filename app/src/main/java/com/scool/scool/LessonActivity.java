@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.speech.tts.TextToSpeech;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -20,15 +21,29 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Locale;
+
 public class LessonActivity extends AppCompatActivity {
 
     DatabaseReference myRef = null;
     DatabaseReference posts_ref = null;
     SpecificLesson lesson = null;
+    TextToSpeech t1;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson);
+
+         t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if (status != TextToSpeech.ERROR) {
+                    t1.setLanguage(Locale.UK);
+                }
+            }
+        });
 
         lesson = getIntent().getExtras().getParcelable("lesson object");
 
@@ -80,6 +95,11 @@ public class LessonActivity extends AppCompatActivity {
     }
 
     public void add_post_by_text(String txt){
+
+        t1.setSpeechRate(20);
+        t1.speak(txt, TextToSpeech.QUEUE_FLUSH, null);
+
+
         TextView new_txt = new TextView(this);
         new_txt.setText(txt);
         new_txt.setTextSize(30);
