@@ -68,6 +68,7 @@ public class LessonActivity extends AppCompatActivity {
                 int size = (int)posts.getChildrenCount() + 1;
                 String text = txt.getText().toString();
                 posts_ref.child(Integer.toString(size)).child("text").setValue(text);
+                txt.setText("");
             }
 
             @Override
