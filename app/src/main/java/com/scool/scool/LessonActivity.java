@@ -1,6 +1,7 @@
 package com.scool.scool;
 
 import android.graphics.Color;
+import android.os.Build;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.Locale;
+import java.util.Queue;
 
 public class LessonActivity extends AppCompatActivity {
 
@@ -41,6 +43,11 @@ public class LessonActivity extends AppCompatActivity {
             public void onInit(int status) {
                 if (status != TextToSpeech.ERROR) {
                     t1.setLanguage(Locale.UK);
+                }
+                else{
+                    Toast t = new Toast(LessonActivity.this);
+                    t.makeText(LessonActivity.this, "akakak", Toast.LENGTH_LONG);
+                    t.show();
                 }
             }
         });
@@ -76,7 +83,6 @@ public class LessonActivity extends AppCompatActivity {
 
     public void SendSum(View v){
         final EditText txt = (EditText)findViewById(R.id.Content);
-        add_post_by_text(txt.getText().toString());
         posts_ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot posts) {
@@ -96,9 +102,9 @@ public class LessonActivity extends AppCompatActivity {
 
     public void add_post_by_text(String txt){
 
-        t1.setSpeechRate(20);
-        t1.speak(txt, TextToSpeech.QUEUE_FLUSH, null);
-
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            t1.speak(txt, TextToSpeech.QUEUE_FLUSH, null, null);
+        }
 
         TextView new_txt = new TextView(this);
         new_txt.setText(txt);

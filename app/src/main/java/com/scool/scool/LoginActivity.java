@@ -47,7 +47,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
-        final String date = df.format(Calendar.getInstance().getTime());
+        //final String date = df.format(Calendar.getInstance().getTime()); TODO: change back
+        final String date = "18.12.2016";
         TextView date_txt = (TextView)findViewById(R.id.dateText);
         date_txt.setText(date);
 
@@ -113,6 +114,7 @@ public class LoginActivity extends AppCompatActivity {
             curr_txt = Integer.toString(day) + curr_txt.substring(2);
             date = curr_txt;
         }
+        date = "18.12.2016";
 
         ((TextView)findViewById(R.id.dateText)).setText(date);
 
