@@ -21,6 +21,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+//import com.marytts.android.link.MaryLink;
 
 import java.util.Locale;
 import java.util.Queue;
@@ -37,6 +38,8 @@ public class LessonActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson);
+
+        //MaryLink.load(this);
 
          t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
@@ -102,9 +105,10 @@ public class LessonActivity extends AppCompatActivity {
 
     public void add_post_by_text(String txt){
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             t1.speak(txt, TextToSpeech.QUEUE_FLUSH, null, null);
-        }
+        }*/
+        //MaryLink.getInstance().startTTS(txt);
 
         TextView new_txt = new TextView(this);
         new_txt.setText(txt);

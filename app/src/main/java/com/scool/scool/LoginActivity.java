@@ -1,5 +1,6 @@
 package com.scool.scool;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
@@ -13,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +24,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+//import com.marytts.android.link.MaryLink;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -52,6 +55,36 @@ public class LoginActivity extends AppCompatActivity {
         TextView date_txt = (TextView)findViewById(R.id.dateText);
         date_txt.setText(date);
 
+        Button button = (Button) findViewById(R.id.add_lesson);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                final Dialog dialog = new Dialog(LoginActivity.this);
+                dialog.setContentView(R.layout.custom);
+                dialog.setTitle("Add lesson");
+
+                // set the custom dialog components - text, image and button
+                //TextView text = (TextView) dialog.findViewById(R.id.text);
+
+                Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
+                Button dialogCancel = (Button) dialog.findViewById(R.id.dialogButtonCancel);
+                // if button is clicked, close the custom dialog
+                dialogCancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+                dialogButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //LoginActivity.add_lesson();
+                    }
+                });
+
+                dialog.show();
+            }
+        });
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         myRef = database.getReference();
@@ -60,6 +93,8 @@ public class LoginActivity extends AppCompatActivity {
         main_layout = (LinearLayout) findViewById(R.id.content_login);
         main_layout.setBackgroundColor(Color.WHITE);
         set_ui_components("trnoam");
+
+        
     }
 
     private void set_ui_components(String username){
@@ -114,7 +149,7 @@ public class LoginActivity extends AppCompatActivity {
             curr_txt = Integer.toString(day) + curr_txt.substring(2);
             date = curr_txt;
         }
-        date = "18.12.2016";
+        date = "18.12.2016";   //Todo: Change back
 
         ((TextView)findViewById(R.id.dateText)).setText(date);
 

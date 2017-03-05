@@ -24,6 +24,14 @@
             app:title="Scool"
             app:titleTextColor="@android:color/black">
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Add Lesson"
+                android:layout_gravity="right"
+                android:onClick="onClickLesson"
+                android:id="@+id/add_lesson" />
+
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
