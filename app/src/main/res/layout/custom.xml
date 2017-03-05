@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" ><![CDATA[
+    android:layout_height="wrap_content"
+    android:orientation="vertical"><![CDATA[
 
     />
 
@@ -11,72 +13,144 @@
 
 
 
+
+
+
+
+
+
     ]]>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Course id"
-        android:ems="10"
-        android:id="@+id/course_id"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="67dp"
-        android:layout_marginTop="46dp" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/course_selection_layout">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Date"
-        android:ems="10"
-        android:layout_below="@+id/course_id"
-        android:layout_alignStart="@+id/course_id"
-        android:layout_marginTop="41dp"
-        android:id="@+id/date_id" />
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner_courses"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/dialogButtonOK"
-        android:layout_width="100px"
-        android:layout_height="wrap_content"
-        android:text=" Ok "
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="119dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/start_hour_id"
-        android:layout_marginEnd="23dp" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/date_layout">
 
-    <Button
-        android:text="Cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="74dp"
-        android:id="@+id/dialogButtonCancel"
-        android:layout_alignBaseline="@+id/dialogButtonOK"
-        android:layout_alignBottom="@+id/dialogButtonOK"
-        android:layout_toStartOf="@+id/dialogButtonOK" />
+        <Spinner
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/yyyy"
+            android:layout_below="@+id/spinner_courses"
+            android:layout_alignParentStart="true"
+            android:layout_alignEnd="@+id/dialogButtonCancel"
+            android:layout_weight="1" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Start Hour"
-        android:ems="10"
-        android:id="@+id/start_hour_id"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="26dp" />
+        <Spinner
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/dd"
+            android:layout_alignTop="@+id/mm"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="23dp"
+            android:layout_weight="1" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Finish Hour"
-        android:ems="10"
-        android:id="@+id/finish_hour_id"
-        android:layout_above="@+id/dialogButtonOK"
-        android:layout_alignStart="@+id/start_hour_id"
-        android:layout_marginBottom="11dp" />
+        <Spinner
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/mm"
+            android:layout_above="@+id/spinner5"
+            android:layout_alignEnd="@+id/finish_hour_id"
+            android:layout_weight="1" />
+    </LinearLayout>
 
-</RelativeLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/from_layout">
+
+        <TextView
+            android:text="From:"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/from_text"
+            android:layout_weight="1"
+            android:textSize="24sp" />
+
+        <Spinner
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/from_hh"
+            android:layout_weight="1" />
+
+        <Spinner
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/from_mm"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/to_layout">
+
+        <TextView
+            android:text="To:"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/to_text"
+            android:layout_weight="1"
+            android:textSize="24sp" />
+
+        <Spinner
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/to_hh"
+            android:layout_weight="1" />
+
+        <Spinner
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/to_mm"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:id="@+id/buttons_layout"
+        android:layout_height="50dp">
+
+        <Button
+            android:text="Cancel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/dialogButtonCancel"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/finish_hour_id"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:textColor="@color/colorPrimary" />
+
+        <Button
+            android:id="@+id/dialogButtonOK"
+            android:layout_height="wrap_content"
+            android:text=" Ok "
+            android:layout_alignBaseline="@+id/dialogButtonCancel"
+            android:layout_alignBottom="@+id/dialogButtonCancel"
+            android:layout_alignEnd="@+id/dd"
+            android:layout_weight="1"
+            android:layout_width="100dp"
+            android:textColor="@color/colorPrimary"
+            android:background="?android:attr/selectableItemBackground" />
+
+    </LinearLayout>
+
+</LinearLayout>

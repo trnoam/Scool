@@ -14,8 +14,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,6 +45,7 @@ public class LoginActivity extends AppCompatActivity {
     LinearLayout main_layout = null;
     public static int PIXEL_PER_MINUTE = 3;
     Vector<DataSnapshot> all_classes_today = null;
+    public List<SpecificLesson> ls = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,10 +62,33 @@ public class LoginActivity extends AppCompatActivity {
 
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                if (ls == null){
+                    return;
+                }
                 final Dialog dialog = new Dialog(LoginActivity.this);
                 dialog.setContentView(R.layout.custom);
                 dialog.setTitle("Add lesson");
-
+                ArrayList<SpecificLesson> ls_copy = new ArrayList<SpecificLesson>(ls);
+                ArrayList<String> spinnerArray = new ArrayList<String>();
+                for (SpecificLesson lesson : ls_copy){
+                    Boolean seen = false;
+                    for (SpecificLesson lesson2 : ls_copy){
+                        if (lesson.class_id.equals(lesson2.class_id)){
+                            if (seen){
+                                ls.remove(lesson2);
+                            }else{
+                                seen = true;
+                            }
+                        }
+                    }
+                }
+                for (SpecificLesson lesson : ls) {
+                    spinnerArray.add(lesson.class_name + "-" + lesson.class_id);
+                }
+                final Spinner spinner = (Spinner)dialog.findViewById(R.id.spinner_courses);
+                ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(LoginActivity.this,
+                        android.R.layout.simple_spinner_dropdown_item, spinnerArray);
+                spinner.setAdapter(spinnerArrayAdapter);
                 // set the custom dialog components - text, image and button
                 //TextView text = (TextView) dialog.findViewById(R.id.text);
 
@@ -78,10 +104,11 @@ public class LoginActivity extends AppCompatActivity {
                 dialogButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        //LoginActivity.add_lesson();
+                        //add_lesson();
+                        //add_lesson(LoginActivity.this.ls[spinner.getSelectedItemId()].class_id, );
+                        my_toast("" + spinner.getSelectedItemId());
                     }
                 });
-
                 dialog.show();
             }
         });
@@ -94,7 +121,7 @@ public class LoginActivity extends AppCompatActivity {
         main_layout.setBackgroundColor(Color.WHITE);
         set_ui_components("trnoam");
 
-        
+
     }
 
     private void set_ui_components(String username){
@@ -133,7 +160,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     void start_ui_components(Vector<DataSnapshot> all_classes_data, int factor){
-        List<SpecificLesson> ls = new ArrayList<SpecificLesson>();
+        ls = new ArrayList<SpecificLesson>();
         DateFormat df = new SimpleDateFormat("yyyy|MM|dd");
         DateFormat print_date = new SimpleDateFormat("dd.MM.yyyy");
 
@@ -289,5 +316,13 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    private void add_lesson(String id, String date, String start_h, String end_h, final Dialog dismiss_when_done) {
+        myRef.child("classes").child(id).child("times").child(date).child(start_h).child("finish time").setValue(end_h, new DatabaseReference.CompletionListener() {
+            @Override
+            public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                dismiss_when_done.dismiss();
+            }
+        });
     }
 }
