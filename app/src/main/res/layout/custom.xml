@@ -47,7 +47,7 @@
             android:id="@+id/yyyy"
             android:layout_below="@+id/spinner_courses"
             android:layout_alignParentStart="true"
-            android:layout_alignEnd="@+id/dialogButtonCancel"
+            android:layout_alignEnd="@+id/dialogButtonCancelCreate"
             android:layout_weight="1" />
 
         <Spinner
@@ -132,7 +132,7 @@
             android:text="Cancel"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:id="@+id/dialogButtonCancel"
+            android:id="@+id/dialogButtonCancelCreate"
             android:layout_alignParentBottom="true"
             android:layout_alignStart="@+id/finish_hour_id"
             android:layout_weight="1"
@@ -143,8 +143,8 @@
             android:id="@+id/dialogButtonOK"
             android:layout_height="wrap_content"
             android:text=" Ok "
-            android:layout_alignBaseline="@+id/dialogButtonCancel"
-            android:layout_alignBottom="@+id/dialogButtonCancel"
+            android:layout_alignBaseline="@+id/dialogButtonCancelCreate"
+            android:layout_alignBottom="@+id/dialogButtonCancelCreate"
             android:layout_alignEnd="@+id/dd"
             android:layout_weight="1"
             android:layout_width="100dp"

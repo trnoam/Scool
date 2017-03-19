@@ -9,13 +9,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -93,7 +93,7 @@ public class LoginActivity extends AppCompatActivity {
                 //TextView text = (TextView) dialog.findViewById(R.id.text);
 
                 Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
-                Button dialogCancel = (Button) dialog.findViewById(R.id.dialogButtonCancel);
+                Button dialogCancel = (Button) dialog.findViewById(R.id.dialogButtonCancelCreate);
                 // if button is clicked, close the custom dialog
                 dialogCancel.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -107,6 +107,69 @@ public class LoginActivity extends AppCompatActivity {
                         //add_lesson();
                         //add_lesson(LoginActivity.this.ls[spinner.getSelectedItemId()].class_id, );
                         my_toast("" + spinner.getSelectedItemId());
+                    }
+                });
+                dialog.show();
+            }
+        });
+
+        Button button_join_course = (Button) findViewById(R.id.join_course);
+
+        button_join_course.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (ls == null){
+                    return;
+                }
+                final Dialog dialog = new Dialog(LoginActivity.this);
+                dialog.setContentView(R.layout.join);
+                dialog.setTitle("Join Course:");
+                final EditText course_id_edit_text = (EditText)dialog.findViewById(R.id.course_id_join);
+                Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
+                Button dialogCancel = (Button) dialog.findViewById(R.id.dialogButtonCancelCreate);
+                // if button is clicked, close the custom dialog
+                dialogCancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+                dialogButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //add_lesson();
+                        //add_lesson(LoginActivity.this.ls[spinner.getSelectedItemId()].class_id, );
+                        if(course_id_edit_text.getText() != null) {
+                            my_toast(String.valueOf(course_id_edit_text.getText()));
+                        }
+                    }
+                });
+                dialog.show();
+            }
+        });
+
+        Button button_create_course = (Button) findViewById(R.id.create_course);
+
+        button_create_course.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (ls == null){
+                    return;
+                }
+                final Dialog dialog = new Dialog(LoginActivity.this);
+                dialog.setContentView(R.layout.create);
+                dialog.setTitle("Create Course:");
+                Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOKCreate);
+                Button dialogCancel = (Button) dialog.findViewById(R.id.dialogButtonCancelCreate);
+                // if button is clicked, close the custom dialog
+                dialogCancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+                dialogButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        my_toast("Course created");
                     }
                 });
                 dialog.show();

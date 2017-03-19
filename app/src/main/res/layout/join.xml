@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"><![CDATA[
+
+    />
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ]]>
+
+    <TextView
+        android:text="Please enter the course's id:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        tools:text="Please enter the course's id:"
+        android:textSize="24sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/course_id_join"
+        android:hint="course's id" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:id="@+id/buttons_layout_join"
+        android:layout_height="50dp">
+
+        <Button
+            android:text="Cancel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/dialogButtonCancelCreate"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/finish_hour_id"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:textColor="@color/colorPrimary" />
+
+        <Button
+            android:id="@+id/dialogButtonOK"
+            android:layout_height="wrap_content"
+            android:text=" Ok "
+            android:layout_alignBaseline="@+id/dialogButtonCancelCreate"
+            android:layout_alignBottom="@+id/dialogButtonCancelCreate"
+            android:layout_alignEnd="@+id/dd"
+            android:layout_weight="1"
+            android:layout_width="100dp"
+            android:textColor="@color/colorPrimary"
+            android:background="?android:attr/selectableItemBackground" />
+
+    </LinearLayout>
+
+</LinearLayout>

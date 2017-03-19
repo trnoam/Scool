@@ -52,7 +52,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="d14dc7f1ad45d71754c8c0dd284f8ef5d2b0660d">
+        sha1="aca02671e104e606df59dfa6abf5adb54d9ff153">
         <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_63a83afd94770768b4ca8981bb639798c8345d7d\classes.dex" />
     </item>
     <item
@@ -106,7 +106,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="42605532591115a2309dfec6388bfcc31ce71c06">
+        sha1="f05fad05ca4e5c6b6fda71f5afdfa78a5eed9c0d">
         <dex dex="C:\Users\User\Desktop\Scool\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_5766203733419d36175d4d660489bb90ded7eaee\classes.dex" />
     </item>
     <item

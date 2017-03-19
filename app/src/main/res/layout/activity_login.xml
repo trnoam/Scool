@@ -29,8 +29,19 @@
                 android:layout_height="match_parent"
                 android:text="Add Lesson"
                 android:layout_gravity="right"
-                android:onClick="onClickLesson"
                 android:id="@+id/add_lesson" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Join course"
+                android:layout_gravity="right"
+                android:id="@+id/join_course" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Create Course"
+                android:layout_gravity="right"
+                android:id="@+id/create_course" />
 
         </android.support.v7.widget.Toolbar>
 
