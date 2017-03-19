@@ -106,7 +106,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         //add_lesson();
                         //add_lesson(LoginActivity.this.ls[spinner.getSelectedItemId()].class_id, );
-                        my_toast("" + spinner.getSelectedItemId());
+                        my_toast("Added Lesson");
                     }
                 });
                 dialog.show();
@@ -139,7 +139,9 @@ public class LoginActivity extends AppCompatActivity {
                         //add_lesson();
                         //add_lesson(LoginActivity.this.ls[spinner.getSelectedItemId()].class_id, );
                         if(course_id_edit_text.getText() != null) {
-                            my_toast(String.valueOf(course_id_edit_text.getText()));
+                            my_toast("Joined course " + String.valueOf(course_id_edit_text.getText()));
+                        }else{
+                            my_toast("Nothing inserted");
                         }
                     }
                 });
