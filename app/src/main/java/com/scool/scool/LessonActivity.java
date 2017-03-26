@@ -46,6 +46,7 @@ public class LessonActivity extends AppCompatActivity {
     TextToSpeech t1;
     public static int count;
     public static Toast prev_toast = null;
+    public AudioTrack audioTrack = null;
 
 
     @Override
@@ -108,6 +109,9 @@ public class LessonActivity extends AppCompatActivity {
 
     public void SendSum(View v){
         final EditText txt = (EditText)findViewById(R.id.Content);
+        if (txt.getText().toString().isEmpty()){
+            return;
+        }
         posts_ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot posts) {
@@ -131,7 +135,7 @@ public class LessonActivity extends AppCompatActivity {
             t1.speak(txt, TextToSpeech.QUEUE_FLUSH, null, null);
         }*/
         //MaryLink.getInstance().startTTS(txt);
-        if(is_sound) {
+        if(is_sound && !txt.isEmpty()) {
             play_string(txt);
         }
 
@@ -190,20 +194,27 @@ public class LessonActivity extends AppCompatActivity {
         }
     }
     public void play(byte[][] sounds, String str){
-        int min_buffer_size = 100000;
+        int min_buffer_size = 10000;
+        if(audioTrack == null) {
+            audioTrack = new AudioTrack(AudioManager.STREAM_MUSIC,
+                    44100, AudioFormat.CHANNEL_OUT_STEREO, AudioFormat.ENCODING_PCM_16BIT, min_buffer_size, AudioTrack.MODE_STREAM);
+        }
         for(byte[] sound: sounds){
+            if(sound == null){
+                continue;
+            }
             if (sound.length > min_buffer_size){
                 min_buffer_size = sound.length;
+                audioTrack = new AudioTrack(AudioManager.STREAM_MUSIC,
+                        44100, AudioFormat.CHANNEL_OUT_STEREO, AudioFormat.ENCODING_PCM_16BIT, min_buffer_size, AudioTrack.MODE_STREAM);
             }
         }
         my_toast("Playing " + str);
-        AudioTrack audioTrack = new AudioTrack(AudioManager.STREAM_MUSIC,
-                44100, AudioFormat.CHANNEL_OUT_STEREO, AudioFormat.ENCODING_PCM_16BIT, min_buffer_size, AudioTrack.MODE_STREAM);
         for(byte[] sound: sounds){
-            if (sound == null){
-                continue;
+            if(sound == null){
+                continue;//TODO: Normal TTS if the word is not in firebase.
             }
-            audioTrack.write(sound, 0, sound.length );
+            audioTrack.write(sound, 0, sound.length);
             audioTrack.play();
         }
     }
