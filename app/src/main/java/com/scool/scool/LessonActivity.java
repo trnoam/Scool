@@ -3,6 +3,7 @@ package com.scool.scool;
 import android.graphics.Color;
 import android.media.AudioFormat;
 import android.media.AudioManager;
+import android.media.AudioRouting;
 import android.media.AudioTrack;
 import android.media.MediaPlayer;
 import android.os.Build;
@@ -12,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -135,14 +137,14 @@ public class LessonActivity extends AppCompatActivity {
             t1.speak(txt, TextToSpeech.QUEUE_FLUSH, null, null);
         }*/
         //MaryLink.getInstance().startTTS(txt);
-        if(is_sound && !txt.isEmpty()) {
-            play_string(txt);
-        }
-
         TextView new_txt = new TextView(this);
         new_txt.setText(txt);
         new_txt.setTextSize(30);
         new_txt.setBackgroundColor(Color.GREEN);
+
+        if(is_sound && !txt.isEmpty()) {
+            play_string(txt, new_txt);
+        }
 
         LinearLayout ly = (LinearLayout)findViewById(R.id.SumTxt);
         LinearLayout empty = new LinearLayout(this);
@@ -161,7 +163,7 @@ public class LessonActivity extends AppCompatActivity {
         });
     }
 
-    public void play_string(final String str1){
+    public void play_string(final String str1, final TextView textView){
         final String str = str1.toLowerCase();
         final String[] splited = str.split(" ");
         LessonActivity.count = 0;
@@ -177,7 +179,7 @@ public class LessonActivity extends AppCompatActivity {
                     LessonActivity.count++;
                     sounds[i] = bytes;
                     if (LessonActivity.count == splited.length){
-                        LessonActivity.this.play(sounds, str);
+                        LessonActivity.this.play(sounds, str, textView);
                     }
                 }
             }).addOnFailureListener(new OnFailureListener() {
@@ -186,14 +188,15 @@ public class LessonActivity extends AppCompatActivity {
                     LessonActivity.count++;
                     sounds[i] = null;
                     if (LessonActivity.count == splited.length){
-                        LessonActivity.this.play(sounds, str);
+                        LessonActivity.this.play(sounds, str, textView);
                     }
                 }
             });
             index++;
         }
     }
-    public void play(byte[][] sounds, String str){
+    public void play(byte[][] sounds, String str, final TextView textView){
+        final String[] words = str.split(" ");
         int min_buffer_size = 10000;
         if(audioTrack == null) {
             audioTrack = new AudioTrack(AudioManager.STREAM_MUSIC,
@@ -210,13 +213,31 @@ public class LessonActivity extends AppCompatActivity {
             }
         }
         my_toast("Playing " + str);
+        int index = 0;
         for(byte[] sound: sounds){
-            if(sound == null){
+            if(sound == null) {
+                index++;
                 continue;//TODO: Normal TTS if the word is not in firebase.
+            }
+            final int k = index;
+            for(int i = 0; i < 44; i++){
+                sound[i] = 0;
             }
             audioTrack.write(sound, 0, sound.length);
             audioTrack.play();
         }
+        textView.setText(str);
+    }
+    void putBoldOnIndex(int index, String[] words, TextView textView){
+        String before = "";
+        String after = "";
+        for(int k = 0; k < index; k++){
+            before += words[k] + " ";
+        }
+        for(int k = index + 1; k < words.length; k++){
+            after += words[k] = " ";
+        }
+        textView.setText(Html.fromHtml(before + "<b>" + words[index] + "</b>" + after));
     }
     public void my_toast(String message){
         if(prev_toast != null){
