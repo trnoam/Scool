@@ -1,5 +1,6 @@
 package com.scool.scool;
 
+import android.annotation.TargetApi;
 import android.graphics.Color;
 import android.media.AudioFormat;
 import android.media.AudioManager;
@@ -34,6 +35,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 //import com.marytts.android.link.MaryLink;
 
+import java.util.HashMap;
 import java.util.Locale;
 import java.util.Queue;
 import java.util.Vector;
@@ -45,11 +47,10 @@ public class LessonActivity extends AppCompatActivity {
     FirebaseStorage firebaseStorage = null;
     public static StorageReference storageRef = null;
     SpecificLesson lesson = null;
-    TextToSpeech t1;
+    TextToSpeech tts;
     public static int count;
     public static Toast prev_toast = null;
     public AudioTrack audioTrack = null;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,13 +59,12 @@ public class LessonActivity extends AppCompatActivity {
         firebaseStorage = FirebaseStorage.getInstance();
         storageRef = firebaseStorage.getReference();
 
-        //MaryLink.load(this);
 
-         t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+         tts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
                 if (status != TextToSpeech.ERROR) {
-                    t1.setLanguage(Locale.UK);
+                    tts.setLanguage(Locale.UK);
                 }
                 else{
                     Toast t = new Toast(LessonActivity.this);
@@ -212,19 +212,29 @@ public class LessonActivity extends AppCompatActivity {
                         44100, AudioFormat.CHANNEL_OUT_STEREO, AudioFormat.ENCODING_PCM_16BIT, min_buffer_size, AudioTrack.MODE_STREAM);
             }
         }
-        my_toast("Playing " + str);
         int index = 0;
         for(byte[] sound: sounds){
-            if(sound == null) {
-                index++;
-                continue;//TODO: Normal TTS if the word is not in firebase.
+            if(sound == null) { //If the word is not in the storage:
+                /*tts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+                    @Override
+                    public void onInit(int status) {
+                        if(status != TextToSpeech.ERROR) {
+                            tts.setLanguage(Locale.UK);
+                        }
+                    }
+                });
+                my_speak(words[index]);
+                while(tts.isSpeaking()){
+                    ;
+                }*/
+                continue;
             }
-            final int k = index;
             for(int i = 0; i < 44; i++){
                 sound[i] = 0;
             }
             audioTrack.write(sound, 0, sound.length);
             audioTrack.play();
+            index++;
         }
         textView.setText(str);
     }
@@ -255,5 +265,26 @@ public class LessonActivity extends AppCompatActivity {
         prev_toast = Toast.makeText(this.getApplicationContext(), message,
                 length);
         prev_toast.show();
+    }
+
+    @SuppressWarnings("deprecation")
+    private void ttsUnder20(String text) {
+        HashMap<String, String> map = new HashMap<>();
+        map.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, "MessageId");
+        tts.speak(text, TextToSpeech.QUEUE_FLUSH, map);
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    private void ttsGreater21(String text) {
+        String utteranceId=this.hashCode() + "";
+        tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, utteranceId);
+    }
+
+    private void my_speak(String text){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            ttsGreater21(text);
+        } else {
+            ttsUnder20(text);
+        }
     }
 }

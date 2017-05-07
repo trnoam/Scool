@@ -30,12 +30,12 @@
     ]]>
 
     <EditText
+        android:id="@+id/teacher_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/course_name"
-        android:hint="Teacher name" />
+        android:hint="Teacher name"
+        android:inputType="textPersonName" />
 
     <EditText
         android:layout_width="match_parent"
@@ -46,12 +46,12 @@
         android:hint="Admin username" />
 
     <EditText
+        android:id="@+id/course_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editText3"
-        android:hint="Course's Name" />
+        android:hint="Course's Name"
+        android:inputType="textPersonName" />
 
     <LinearLayout
         android:orientation="horizontal"

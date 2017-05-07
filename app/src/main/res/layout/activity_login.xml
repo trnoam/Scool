@@ -80,13 +80,14 @@
             android:id="@+id/scrollView">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:orientation="vertical"
                 android:id="@+id/classesLayout"
-                android:divider="?android:dividerHorizontal"
-                android:showDividers="middle"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@android:color/darker_gray">
+                android:background="@android:color/darker_gray"
+                android:divider="?android:dividerHorizontal"
+                android:minHeight="500dp"
+                android:orientation="vertical"
+                android:showDividers="middle">
 
             </LinearLayout>
         </ScrollView>
